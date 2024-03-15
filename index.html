@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sync's Music Player</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="imports.css">
+</head>
+<body>
+    <div id="musicPlayer" class="shadow">
+        <h2 style="color: purple;">Sync's Music Player</h2>
+
+        <div>
+            <img src="SongLogo.png" alt="" style="border-radius: 100%; width: 200px; height: 200px;">
+        </div>
+        <div id="controls">
+            <div style="gap: 0.5rem; display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                <button class="Btn" id="prevBtn">
+                    <svg viewBox="0 0 320 512" class="svg">
+                        <path 
+                        d="M267.5 440.6c9.5 7.9 22.8 9.7 34.1 4.4s18.4-16.6 18.4-29V96c0-12.4-7.2-23.7-18.4-29s-24.5-3.6-34.1 4.4l-192 160L64 241V96c0-17.7-14.3-32-32-32S0 78.3 0 96V416c0 17.7 14.3 32 32 32s32-14.3 32-32V271l11.5 9.6 192 160z">
+                        </path>
+                    </svg>
+                    Back
+                  </button>
+                  
+
+                  
+                <button id="playPauseBtn"><label class="container">
+                    <input checked="checked" type="checkbox">
+                      <svg viewBox="0 0 384 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="play"><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"></path></svg>
+                      <svg viewBox="0 0 320 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="pause"><path d="M48 64C21.5 64 0 85.5 0 112V400c0 26.5 21.5 48 48 48H80c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H48zm192 0c-26.5 0-48 21.5-48 48V400c0 26.5 21.5 48 48 48h32c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H240z"></path></svg></label>
+                </button>
+
+                <button class="Btn" id="nextBtn">
+                    Next
+                    <svg viewBox="0 0 320 512" class="svg">
+                      <path
+                        d="M52.5 440.6c-9.5 7.9-22.8 9.7-34.1 4.4S0 428.4 0 416V96C0 83.6 7.2 72.3 18.4 67s24.5-3.6 34.1 4.4l192 160L256 241V96c0-17.7 14.3-32 32-32s32 14.3 32 32V416c0 17.7-14.3 32-32 32s-32-14.3-32-32V271l-11.5 9.6-192 160z"
+                      ></path>
+                    </svg>
+                  </button>
+
+            </div>
+              
+            <div style="margin: 20px; display: flex; flex-direction: row; gap: 0.5rem; align-items: center;">
+                <span id="currentTime">0:00</span> 
+                <input id="seekBar" class="timeRange" value="0" max="100" min="0" type="range">
+                <span id="duration">0:00</span>
+            </div>
+            <label class="slider">
+                <input type="range" class="level" id="volumeControl" value="3" max="100" min="0">
+                <svg class="volume" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve">
+                    <g>
+                        <path d="M18.36 19.36a1 1 0 0 1-.705-1.71C19.167 16.148 20 14.142 20 12s-.833-4.148-2.345-5.65a1 1 0 1 1 1.41-1.419C20.958 6.812 22 9.322 22 12s-1.042 5.188-2.935 7.069a.997.997 0 0 1-.705.291z" fill="currentColor" data-original="#000000"></path>
+                        <path d="M15.53 16.53a.999.999 0 0 1-.703-1.711C15.572 14.082 16 13.054 16 12s-.428-2.082-1.173-2.819a1 1 0 1 1 1.406-1.422A6 6 0 0 1 18 12a6 6 0 0 1-1.767 4.241.996.996 0 0 1-.703.289zM12 22a1 1 0 0 1-.707-.293L6.586 17H4c-1.103 0-2-.897-2-2V9c0-1.103.897-2 2-2h2.586l4.707-4.707A.998.998 0 0 1 13 3v18a1 1 0 0 1-1 1z" fill="currentColor" data-original="#000000"></path>
+                    </g>
+                </svg>
+            </label> 
+        
+        </div>
+        <audio id="audioPlayer">
+            <source src="${songs}" , type="audio/mpeg">
+        </audio>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
